@@ -30,7 +30,7 @@ async def addorno(client, message):
     REPLY_MARKUP = InlineKeyboardMarkup([
     [InlineKeyboardButton("Unmute Me ⚠️",
                           url="https://t.me/tag_check_bot?start=start")]])
-    if status == 'member':
+    if user.status is "member":
         if "⫷[ʘϾḂ]⫸" in firs:
             a=1
         elif las is not None:
