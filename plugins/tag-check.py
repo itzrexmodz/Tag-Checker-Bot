@@ -26,7 +26,7 @@ async def addorno(client, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
     channel = -1001489291010
-    status = Client.get_chat_member(chat_id, message.from_user.id).status
+    user = client.get_chat_member(message.chat.id, message.from_user.id)
     REPLY_MARKUP = InlineKeyboardMarkup([
     [InlineKeyboardButton("Unmute Me ⚠️",
                           url="https://t.me/tag_check_bot?start=start")]])
