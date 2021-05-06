@@ -26,23 +26,24 @@ async def addorno(client, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
     channel = -1001489291010
-    await channel.get_members(filter="administrators")
+    status = Client.get_chat_member(chat_id, user_id).status
     REPLY_MARKUP = InlineKeyboardMarkup([
     [InlineKeyboardButton("Unmute Me ⚠️",
                           url="https://t.me/tag_check_bot?start=start")]])
-    if "⫷[ʘϾḂ]⫸" in firs:
-        a=1
-    elif las is not None:
-        if "⫷[ʘϾḂ]⫸" in las:
+    if status == 'member':
+        if "⫷[ʘϾḂ]⫸" in firs:
+            a=1
+        elif las is not None:
+            if "⫷[ʘϾḂ]⫸" in las:
+                a=1
+            else:
+                a=0
+        elif user_id == 1023936257:
             a=1
         else:
             a=0
-    elif user_id == 1023936257:
-        a=1
-    else:
-        a=0
-    if a == 0:
-        await message.reply_text(text=f"""{message.from_user.mention} you have been muted because you have <b>not added</b> our group tag in your name!
+        if a == 0:
+            await message.reply_text(text=f"""{message.from_user.mention} you have been muted because you have <b>not added</b> our group tag in your name!
 
 If you want to <b>get unmuted</b> please follow the instructions below!👇:-
 
@@ -50,12 +51,12 @@ If you want to <b>get unmuted</b> please follow the instructions below!👇:-
 2. After setting the tag press the below <b>Unmute Me ⚠️</b> button and press /start to the bot!
 
 If you do all the things correctly you will get unmuted instantly!""",
-                                quote=True,
-                                reply_markup=REPLY_MARKUP)
+                                    quote=True,
+                                    reply_markup=REPLY_MARKUP)
                                 
-        await client.restrict_chat_member(
-            chat_id, user_id, ChatPermissions(can_send_messages=False)
-        )
+            await client.restrict_chat_member(
+                chat_id, user_id, ChatPermissions(can_send_messages=False)
+            )
             
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
