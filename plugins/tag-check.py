@@ -25,6 +25,8 @@ async def addorno(client, message):
     las = message.from_user.last_name
     chat_id = message.chat.id
     user_id = message.from_user.id
+    channel = -1001489291010
+    await channel.get_members(filter="administrators")
     REPLY_MARKUP = InlineKeyboardMarkup([
     [InlineKeyboardButton("Unmute Me ⚠️",
                           url="https://t.me/tag_check_bot?start=start")]])
@@ -59,7 +61,7 @@ If you do all the things correctly you will get unmuted instantly!""",
 async def start(client, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
-    channel = Config.Tag_Check_Group
+    channel = -1001489291010
     firs = message.from_user.first_name
     las = message.from_user.last_name
     if "⫷[ʘϾḂ]⫸" in firs:
