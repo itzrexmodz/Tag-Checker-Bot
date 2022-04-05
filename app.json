@@ -2,7 +2,7 @@
   "name": "Tag Checker bot",
   "description": "A bot Made For Checking If Your Name Has #ᴀʀᴄ™ Tag Or Not",
   "My Telegram Channel": "https://t.me/Was_Aditya",
-  "logo": "https://telegra.ph/file/d79ed64d6eff659e2f681.jpg",
+  "logo": "https://telegra.ph/file/5fa308aaead58f5ad1c6b.jpg",
   "keywords": ["telegram", "Tag Checker", "Name Checker","telegram bot"],
   "env": {
      "BOT_TOKEN": {
